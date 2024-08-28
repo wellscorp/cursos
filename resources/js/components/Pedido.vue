@@ -162,7 +162,7 @@
               <button type="submit" class="btn btn-primary">Salvar</button>
 
               
-              <button type="button" class="btn btn-warning" :disabled="processing" @click="pagar()">Pagar {{ this.pedValor }}</button>
+              <button type="button" class="btn btn-warning" :disabled="processing" @click="pagar(this.id)">Pagar {{ this.pedValor }}</button>
             </div>
 
 
@@ -268,18 +268,17 @@ export default {
 
       this.processing = true;
       this.error = null;
-      const { paymentIntent, error } = await this.stripe.createPaymentMethod({
-        type : 'card', 
-        card : this.cardElement,
-        billing_details : {
-          name : this.cardName
-        }
+      const { error: paymentMethodError, paymentMethod } = await this.stripe.createPaymentMethod({
+        type: 'card',
+        card: this.cardElement,
+        billing_details: {
+            name: this.cardName,
+        },
       });
 
-      if( error ){
-        this.error = error.message;
+      if (paymentMethodError) {
+        this.error = paymentMethodError.message;
         this.processing = false;
-
         return;
       }
 
@@ -287,16 +286,25 @@ export default {
       const response = await axios.post('/criar-pagamento', { valor : this.pedValor })
       const clientSecret = response.data.clientSecret;
 
-      console.log("paymentIntent", paymentIntent)
-      const result = await this.stripe.confirmCardPayment( clientSecret, {
-        payment_method : paymentIntent.id
-      } )
+      console.log("paymentMethod", paymentMethod)
+      const { error: paymentIntentError, paymentIntent } = await this.stripe.confirmCardPayment(clientSecret, {
+        payment_method: paymentMethod.id,
+      });
 
-      if( result.error ){
-        this.error = result.error.message;
-      }else{
-        alert('Pagamento realizado com sucesso');
+
+      if (paymentIntentError) {
+        this.error = paymentIntentError.message;
+      } else {
         
+          this.pedStatus = 1;
+          document.getElementById('pedStatus').value = 1;
+          console.log("id", id)
+          this.inserir( id );
+
+          //alert('Pagamento realizado com sucesso!');
+          
+
+
       }
 
       this.processing = false;
