@@ -10,7 +10,7 @@
                     <ul class="navbar-nav">
 
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                            <a class="nav-link active" aria-current="page" href="/">Dashboard</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/cursos">Cursos</a>
@@ -31,6 +31,7 @@
         </nav>
         <main class="container mt-4">
 
+          <h2>Pedidos</h2>
 
             <slot>
               <div class="row">
@@ -298,10 +299,9 @@ export default {
         
           this.pedStatus = 1;
           document.getElementById('pedStatus').value = 1;
-          console.log("id", id)
           this.inserir( id );
 
-          //alert('Pagamento realizado com sucesso!');
+          alert('Pagamento realizado com sucesso!');
           
 
 

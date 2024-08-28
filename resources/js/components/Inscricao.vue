@@ -10,7 +10,7 @@
                     <ul class="navbar-nav">
 
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                            <a class="nav-link active" aria-current="page" href="/">Dashboard</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/cursos">Cursos</a>
@@ -33,6 +33,7 @@
 
 
             <slot>
+            <h2>Inscirções</h2>
               <div class="row">
 
                 <div class="col">

@@ -10,7 +10,7 @@
                     <ul class="navbar-nav">
 
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                            <a class="nav-link active" aria-current="page" href="/">Dashboard</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/cursos">Cursos</a>
@@ -32,6 +32,7 @@
         <main class="container mt-4">
 
 
+            <h2>Alunos</h2>
             <slot>
               <div class="row">
 

@@ -12,6 +12,7 @@ import Pedido from './components/Pedido.vue'
 const app = createApp({});
 
 
+app.component('layout', Layout);
 app.component('curso', Curso);
 app.component('inscricao', Inscricao);
 app.component('aluno', Aluno);
