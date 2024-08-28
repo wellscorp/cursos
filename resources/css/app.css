@@ -1,1 +1,38 @@
-@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+
+
+
+.btn{
+    margin-right: 4px;
+}
+.btn-primary{
+    background: #203c51;
+}
+
+.btn-warning{
+    background: #5599be;
+}
+.btn-danger{
+    background: #f66b0e;
+}
+
+
+
+.banner{
+    background: #002f52;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .banner img{
+        max-width: 200px;
+    }
+
+
+    .bg-light{
+        background: #ff571f !important;
+    }
+        .bg-light a{
+            color: #fff;
+        }

@@ -7,6 +7,8 @@ import Inscricao from './components/Inscricao.vue'
 import Aluno from './components/Aluno.vue'
 import Pedido from './components/Pedido.vue'
 
+import '../css/app.css'
+
 
 
 const app = createApp({});

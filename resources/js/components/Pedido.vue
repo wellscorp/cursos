@@ -1,4 +1,7 @@
 <template>
+    <div class="banner">
+      <img src="../../../public/logo.png" />
+    </div>
     <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -40,7 +43,6 @@
                   <button type="button" class="btn btn-primary" @click="novo()">Novo</button>
                 </div>
                 <div class="col">
-                  <input type="text" class="form-control" v-model="pesquisa" id="pesquisa" placeholder="pesquisar..." />
                 </div>
 
               </div>
@@ -142,6 +144,9 @@
               </div>
 
 
+              <div class="mb-3">
+                <h4>Pagamento no cartão</h4>
+              </div>
               
               <div class="mb-3">
                 <input type="text" v-model="cardName" placeholder="Nome no cartão" required />

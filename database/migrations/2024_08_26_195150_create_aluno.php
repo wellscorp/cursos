@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('alu_nome');
             $table->string('alu_email');
             $table->string('alu_celular');
+            $table->string('alu_endereco');
             $table->integer('alu_disponivel');
             $table->timestamps();
         });

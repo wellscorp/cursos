@@ -15,6 +15,7 @@ class Alunos extends Model
         'alu_nome',
         'alu_email',
         'alu_celular',
+        'alu_endereco',
         'alu_disponivel'
     ];
 }
