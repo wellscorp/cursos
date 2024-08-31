@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('cur_id_curso');
             $table->integer('alu_id_aluno');
-            $table->integer('ins_disponivel')->default(1);
+            $table->integer('ins_disponivel')->nullable();
             $table->timestamps();
         });
     }

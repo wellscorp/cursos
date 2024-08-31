@@ -15,10 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('cur_nome');
             $table->decimal('cur_valor', 10, 2);
-            //$table->dateTime('cur_tempo_cadastro');
-            //$table->timestamps('cur_tempo_cadastro');
             $table->integer('cur_disponivel');
-            //$table->timestamps();
+            $table->timestamps();
         });
     }
 

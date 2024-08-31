@@ -148,7 +148,7 @@
                 <h4>Pagamento no cartão</h4>
               </div>
               
-              <div class="mb-3">
+              <div class="mb-3 cartao">
                 <input type="text" v-model="cardName" placeholder="Nome no cartão" required />
                 <div id="card-element"></div>
 
